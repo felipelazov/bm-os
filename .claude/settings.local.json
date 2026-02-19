@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(pdftotext:*)",
+      "WebSearch",
+      "Bash(ls:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run dev)",
+      "Bash(python3:*)",
+      "Bash(curl:*)",
+      "Bash(npx next build:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \".claude/hooks/synapse-engine.js\""
+          }
+        ]
+      }
+    ]
+  }
+}
